@@ -9,6 +9,9 @@
     <p>
       XIVLauncher is a custom launcher for FINAL FANTASY XIV that offers painless patching, a customized WINE version for perfect compatibility with FFXIV, a multitude of useful plugins and seamless Steam Deck integration. Install, log in, patch, and get started!
     </p>
+    <p>
+      FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd. FINAL FANTASY XIV © 2010-2022 SQUARE ENIX CO., LTD. All Rights Reserved. We are not affiliated with SQUARE ENIX CO., LTD. in any way.
+    </p>
   </description>
   <url type="homepage">https://goatcorp.github.io/</url>
   <url type="bugtracker">https://github.com/goatcorp/FFXIVQuickLauncher/issues</url>
