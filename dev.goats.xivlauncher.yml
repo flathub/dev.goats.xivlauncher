@@ -16,7 +16,7 @@ command: xivlauncher
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
-  - --socket=wayland
+  #- --socket=wayland re-add later when libdecor support is added to builds
   - --share=network
   - --filesystem=home
   - --socket=pulseaudio
