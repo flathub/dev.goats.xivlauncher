@@ -24,6 +24,8 @@ finish-args:
   - --system-talk-name=org.freedesktop.UDisks2
   - --device=all
   - --allow=devel
+  - --parent-expose-pids
+  - --parent-share-pids
 modules:
   - name: libsecret
     buildsystem: meson
