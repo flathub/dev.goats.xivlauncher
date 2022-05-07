@@ -1,4 +1,4 @@
-1app-id: dev.goats.xivlauncher
+app-id: dev.goats.xivlauncher
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
