@@ -1,4 +1,4 @@
-app-id: dev.goats.xivlauncher
+1app-id: dev.goats.xivlauncher
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
@@ -21,6 +21,7 @@ finish-args:
   - --filesystem=home
   - --socket=pulseaudio
   - --talk-name=org.freedesktop.secrets
+  - --talk-name=org.freedesktop.Flatpak # This is used to run WINE outside of the sandbox, to alleviate issues with gamescope/Steam window detection
   - --system-talk-name=org.freedesktop.UDisks2
   - --device=all
   - --allow=devel
