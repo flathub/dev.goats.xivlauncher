@@ -25,6 +25,7 @@ finish-args:
   - --system-talk-name=org.freedesktop.UDisks2
   - --device=all
   - --allow=devel
+  - --allow=per-app-dev-shm # Required for certain plugins
 modules:
   - name: libsecret
     buildsystem: meson
