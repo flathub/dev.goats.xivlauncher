@@ -554,10 +554,10 @@
     },
     {
         "type": "file",
-        "url": "https://api.nuget.org/v3-flatcontainer/keysharp/1.0.4/keysharp.1.0.4.nupkg",
-        "sha512": "f97333846ee9d032423aaaf1d20a755228b238dfd6f7f276705e785c657cec3d93cbd3f855c6c4c990f7b0ce0483d54bbeb0f47883860ba0e679c46f4764f449",
+        "url": "https://api.nuget.org/v3-flatcontainer/keysharp/1.0.5/keysharp.1.0.5.nupkg",
+        "sha512": "dcdfd91333a299c5c846d34429992bde26d2e03c9c7d6f1a258ca809f409c2d833df5c41e928b07084b63bf661cfff1dd62bef5f90b189c315fdb795bfa4beb4",
         "dest": "nuget-sources",
-        "dest-filename": "keysharp.1.0.4.nupkg"
+        "dest-filename": "keysharp.1.0.5.nupkg"
     },
     {
         "type": "file",
