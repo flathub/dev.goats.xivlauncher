@@ -32,6 +32,21 @@ finish-args:
   - --device=all
   - --allow=devel
 modules:
+  - name: p7zip
+    no-autogen: true
+    make-args:
+      - "7z"
+    sources:
+    - type: archive
+      url: https://github.com/jinfeihan57/p7zip/archive/v17.04/p7zip-v17.04.tar.gz
+      sha256: ea029a2e21d2d6ad0a156f6679bd66836204aa78148a4c5e498fe682e77127ef
+    - type: shell
+      commands:
+      - sed -i 's|/usr/local|/app|g' makefile.common
+    - type: patch
+      path: p7zip-norar.patch
+    - type: patch
+      path: p7zip-archlinux-reverts_issue_112.patch
   - name: libsecret
     buildsystem: meson
     config-opts:
