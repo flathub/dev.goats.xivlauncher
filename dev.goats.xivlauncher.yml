@@ -21,6 +21,7 @@ finish-args:
   - --filesystem=home
   - --socket=pulseaudio
   - --talk-name=org.freedesktop.secrets
+  - --talk-name=org.freedesktop.Flatpak # This is used as a temporary hack to run xdg-open outside of the sandbox, as Steam Decks have a misconfigured xdg-desktop-portal
   - --system-talk-name=org.freedesktop.UDisks2
   - --device=all
   - --allow=devel
@@ -75,7 +76,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/goatcorp/FFXIVQuickLauncher.git
-        commit: 26c5845c3afbeec20c72ae958dc47f72a99925b2
+        commit: 32668f1a0abbfc68722a941359eeab78fe50114d
       - type: file
         url: https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.linux-x64/6.0.1/microsoft.aspnetcore.app.runtime.linux-x64.6.0.1.nupkg
         dest: nuget-sources
