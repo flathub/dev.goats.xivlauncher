@@ -61,7 +61,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/goatcorp/FFXIVQuickLauncher.git
-        commit: 5d098160b483b54c7517f6dc35e9a8d457ed95be
+        commit: 6a1a59f687ac7b98698e2ebb97d82a94865e50f6
       - type: file
         url: https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.linux-x64/6.0.1/microsoft.aspnetcore.app.runtime.linux-x64.6.0.1.nupkg
         dest: nuget-sources
