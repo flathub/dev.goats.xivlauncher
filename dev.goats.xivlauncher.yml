@@ -21,7 +21,7 @@ finish-args:
   - --filesystem=home
   - --socket=pulseaudio
   - --talk-name=org.freedesktop.secrets
-  - --talk-name=org.freedesktop.Flatpak # This is used as a temporary hack to run xdg-open outside of the sandbox, as Steam Decks have a misconfigured xdg-desktop-portal
+  #- --talk-name=org.freedesktop.Flatpak # This is used as a temporary hack to run xdg-open outside of the sandbox, as Steam Decks have a misconfigured xdg-desktop-portal
   - --system-talk-name=org.freedesktop.UDisks2
   - --device=all
   - --allow=devel
