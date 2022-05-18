@@ -218,13 +218,6 @@
     },
     {
         "type": "file",
-        "url": "https://api.nuget.org/v3-flatcontainer/facepunch.steamworks/2.3.3/facepunch.steamworks.2.3.3.nupkg",
-        "sha512": "401aa2b4a0ad725e063504ca8597542c54b09d44ea5fce1d6cc0edf9059270e5a2d37c154ebea956415956adee1053660d685f43f679fd548d11c68113d11b21",
-        "dest": "nuget-sources",
-        "dest-filename": "facepunch.steamworks.2.3.3.nupkg"
-    },
-    {
-        "type": "file",
         "url": "https://api.nuget.org/v3-flatcontainer/cheaploc/1.1.6/cheaploc.1.1.6.nupkg",
         "sha512": "ff2d6e19a08b54d288eced17cafe2dca9943bc7b0fab131c477f9ce7d8390762b11949228bc4193e661490432828ea8596ccb3d0d01ce2e990c346caa4cbb8fa",
         "dest": "nuget-sources",
@@ -467,6 +460,13 @@
         "sha512": "2ba6a22fd294d611ce62b365bf1149a5ed218e6c74747e9730c90aa25c2089014eafd67290355f1a0a2305fd4afa5a6c5090f0ce7f3a228543a5ae40aaceec8e",
         "dest": "nuget-sources",
         "dest-filename": "serilog.2.9.0.nupkg"
+    },
+    {
+        "type": "file",
+        "url": "https://api.nuget.org/v3-flatcontainer/goaaats.steamworks/2.3.4/goaaats.steamworks.2.3.4.nupkg",
+        "sha512": "af40b958d208e81c1374ad14c2c4c989934e31fa2afc46990efdc02b3d443068e82716249bc3c575cc2aa627556fcb1795a4e932ccea438acbcd0935967801cf",
+        "dest": "nuget-sources",
+        "dest-filename": "goaaats.steamworks.2.3.4.nupkg"
     },
     {
         "type": "file",
