@@ -1,6 +1,6 @@
 app-id: dev.goats.xivlauncher
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '22.08rc.2'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.dotnet6
