@@ -81,8 +81,6 @@ modules:
   # this is a direct copy-paste of the HGL implementation of gamemode. Seems to work, so why not include it?
     buildsystem: meson
     config-opts: &gamemode_opts
-      - -Dwith-systemd=false
-      - -Dwith-daemon=false
       - -Dwith-examples=false
       - -Dwith-util=false
       - -Dwith-sd-bus-provider=no-daemon
