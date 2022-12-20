@@ -28,9 +28,33 @@ finish-args:
   - --system-talk-name=org.freedesktop.UDisks2
   - --device=all
   - --allow=devel
+  - --allow=multiarch # Needed for 32-bit wine support
+
+# Extensions to add 32-bit support for wine
+add-extensions:
+  org.freedesktop.Platform.Compat.i386:
+    directory: lib/i386-linux-gnu
+    version: '22.08'
+
+  org.freedesktop.Platform.Compat.i386.Debug:
+    directory: lib/debug/lib/i386-linux-gnu
+    version: '22.08'
+    no-autodownload: true
+
+  org.freedesktop.Platform.GL32:
+    directory: lib/i386-linux-gnu/GL
+    version: '1.4'
+    versions: 22.08;1.4
+    subdirectories: true
+    no-autodownload: true
+    autodelete: false
+    add-ld-path: lib
+    merge-dirs: vulkan/icd.d;glvnd/egl_vendor.d;OpenCL/vendors;lib/dri;lib/d3d;vulkan/explicit_layer.d;vulkan/implicit_layer.d
+    download-if: active-gl-driver
+    enable-if: active-gl-driver
 
 modules:
-
+  # SDL submodule
   - shared-modules/SDL2/SDL2-2.26.1-with-libdecor.json
 
   - name: libsecret
@@ -91,9 +115,8 @@ modules:
 
       - nuget-dependencies.json
       
-      
-  - name: gamemode
   # this is a direct copy-paste of the HGL implementation of gamemode. Seems to work, so why not include it?
+  - name: gamemode
     buildsystem: meson
     config-opts: &gamemode_opts
       - -Dwith-examples=false
@@ -106,3 +129,17 @@ modules:
         commit: 4dc99dff76218718763a6b07fc1900fa6d1dafd9
         x-checker-data:
             type: git
+
+  # Module to enable 32-bit support for wine
+  # Taken from https://docs.flatpak.org/en/latest/multiarch.html
+  - name: bundle-setup
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/lib/i386-linux-gnu
+      - mkdir -p /app/lib/debug/lib/i386-linux-gnu
+      - mkdir -p /app/lib/i386-linux-gnu/GL
+      - install -Dm644 ld.so.conf /app/etc/ld.so.conf
+    sources:
+      - type: file
+        dest-filename: ld.so.conf
+        url: data:/app/lib32%0A/app/lib/i386-linux-gnu%0A
