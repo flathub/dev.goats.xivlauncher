@@ -17,7 +17,7 @@
     </p>
   </description>
   <url type="homepage">https://goatcorp.github.io/</url>
-  <url type="bugtracker">https://github.com/goatcorp/FFXIVQuickLauncher/issues</url>
+  <url type="bugtracker">https://github.com/goatcorp/XIVLauncher.Core/issues</url>
   <url type="help">https://goatcorp.github.io/faq</url>
   <screenshots>
     <screenshot type="default">
@@ -25,7 +25,7 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release date="2022-10-23" version="1.0.2.0"/>
+    <release date="2023-01-14" version="1.0.3.0"/>
   </releases>
   <update_contact>goatsdev@protonmail.com</update_contact>
   <launchable type="desktop-id">dev.goats.xivlauncher.desktop</launchable>
