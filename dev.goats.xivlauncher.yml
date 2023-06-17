@@ -18,18 +18,17 @@ finish-args:
 - --device=all
 - --allow=devel
 modules:
-- name: gamemode
-# this is a direct copy-paste of the HGL implementation of gamemode. Seems to work, so why not include it?
-  buildsystem: meson
-  config-opts: &gamemode_opts
+- buildsystem: meson
+  config-opts:
   - -Dwith-examples=false
   - -Dwith-util=false
   - -Dwith-sd-bus-provider=no-daemon
-  sources: &gamemode_sources
-  - type: git
-    url: https://github.com/FeralInteractive/gamemode.git
+  name: gamemode
+  sources:
+  - commit: 4dc99dff76218718763a6b07fc1900fa6d1dafd9
     tag: '1.7'
-    commit: 4dc99dff76218718763a6b07fc1900fa6d1dafd9
+    type: git
+    url: https://github.com/FeralInteractive/gamemode.git
     x-checker-data:
       type: git
 - buildsystem: meson
@@ -66,8 +65,8 @@ modules:
   buildsystem: simple
   name: xivlauncher
   sources:
-  - commit: c2e02fd2b48876b4a00ba278c240f8a6361d3455
-    tag: 1.0.3
+  - commit: f9a40edfbefdb9ea8faaa2cddeb6c3fdfbfc5617
+    tag: 1.0.4
     type: git
     url: https://github.com/goatcorp/XIVLauncher.Core.git
   - dest: nuget-sources
