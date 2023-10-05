@@ -9,9 +9,18 @@ command: xivlauncher
 copy-icon: true
 finish-args:
 - --share=ipc
-- --socket=fallback-x11
+# Ideally we would use Wayland and fallback-x11, 
+# but wine doesn't (fully) support Wayland yet.
+# Progress is being made in this area.
+- --socket=x11
 - --share=network
-- --filesystem=home
+- --persist=.xlcore
+- --filesystem=xdg-data/Steam
+- --filesystem=~/.steam
+# External installations of FFXIV
+- --filesystem=/var/mnt
+- --filesystem=/mnt
+- --filesystem=/run/media
 - --socket=pulseaudio
 - --talk-name=org.freedesktop.secrets
 - --system-talk-name=org.freedesktop.UDisks2
