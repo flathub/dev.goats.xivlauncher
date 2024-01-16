@@ -9,7 +9,7 @@ command: xivlauncher
 copy-icon: true
 finish-args:
 - --share=ipc
-- --socket=fallback-x11
+- --socket=x11 # We can switch to Wayland once some launcher issues are resolved.
 - --share=network
 - --filesystem=home
 - --socket=pulseaudio
