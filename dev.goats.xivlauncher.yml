@@ -9,7 +9,7 @@ command: xivlauncher
 copy-icon: true
 finish-args:
 - --share=ipc
-- --socket=fallback-x11
+- --socket=x11 # We can switch to Wayland once some launcher issues are resolved.
 - --share=network
 - --filesystem=home
 - --socket=pulseaudio
@@ -65,8 +65,8 @@ modules:
   buildsystem: simple
   name: xivlauncher
   sources:
-  - commit: 072aca4db439749e92fb189a2f762c57410fdda8
-    tag: 1.0.6
+  - commit: 2126dac46495e02fbdb216de6a8c95b6f08b3263
+    tag: 1.0.7
     type: git
     url: https://github.com/goatcorp/XIVLauncher.Core.git
   - dest: nuget-sources
