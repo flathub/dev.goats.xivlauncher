@@ -44,9 +44,9 @@ modules:
   - -Dgtk_doc=false
   name: libsecret
   sources:
-  - sha256: 3fb3ce340fcd7db54d87c893e69bfc2b1f6e4d4b279065ffe66dac9f0fd12b4d
+  - sha256: 8583e10179456ae2c83075d95455f156dc08db6278b32bf4bd61819335a30e3a
     type: archive
-    url: https://download.gnome.org/sources/libsecret/0.20/libsecret-0.20.5.tar.xz
+    url: https://download.gnome.org/sources/libsecret/0.19/libsecret-0.19.1.tar.xz
 - config-opts:
   - --with-ca-bundle=/etc/ssl/certs/ca-certificates.crt
   name: aria2
