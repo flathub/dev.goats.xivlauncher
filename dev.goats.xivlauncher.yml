@@ -51,9 +51,9 @@ modules:
   - --with-ca-bundle=/etc/ssl/certs/ca-certificates.crt
   name: aria2
   sources:
-  - sha256: 58d1e7608c12404f0229a3d9a4953d0d00c18040504498b483305bcb3de907a5
+  - sha256: 60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b
     type: archive
-    url: https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0.tar.xz
+    url: https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0.tar.xz
 - build-commands:
   - install -d "${FLATPAK_DEST}/opt/XIVLauncher/"
   - dotnet publish -r linux-x64 --sc --source ./nuget-sources -o "${FLATPAK_DEST}/opt/XIVLauncher/"
@@ -83,7 +83,7 @@ modules:
   - nuget-dependencies.json
 rename-icon: xivlauncher
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
 - org.freedesktop.Sdk.Extension.dotnet6
