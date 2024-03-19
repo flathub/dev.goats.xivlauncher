@@ -21,11 +21,11 @@
   <url type="help">https://goatcorp.github.io/faq</url>
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/goatcorp/FFXIVQuickLauncher/master/misc/xlcore_screenshot_v2.png</image>
+      <image>https://raw.githubusercontent.com/goatcorp/XIVLauncher.Core/master/misc/xlcore_screenshot_v2.png</image>
     </screenshot>
   </screenshots>
   <releases>
-    <release date="2023-10-04" version="1.0.6" />
+    <release date="2024-03-19" version="1.0.8" />
   </releases>
   <update_contact>goatsdev@protonmail.com</update_contact>
   <launchable type="desktop-id">dev.goats.xivlauncher.desktop</launchable>
