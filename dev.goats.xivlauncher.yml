@@ -18,6 +18,7 @@ finish-args:
 - --device=all
 - --allow=devel
 modules:
+- shared-modules/SDL2/SDL2-with-libdecor.json
 - buildsystem: meson
   config-opts:
   - -Dwith-examples=false
