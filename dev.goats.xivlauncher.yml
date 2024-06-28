@@ -1,8 +1,8 @@
 app-id: dev.goats.xivlauncher
 build-options:
-  append-ld-library-path: /usr/lib/sdk/dotnet6/lib
-  append-path: /usr/lib/sdk/dotnet6/bin
-  append-pkg-config-path: :/usr/lib/sdk/dotnet6/lib/pkgconfig
+  append-ld-library-path: /usr/lib/sdk/dotnet8/lib
+  append-path: /usr/lib/sdk/dotnet8/bin
+  append-pkg-config-path: :/usr/lib/sdk/dotnet8/lib/pkgconfig
   env:
     DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
 command: xivlauncher
