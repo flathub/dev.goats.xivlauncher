@@ -16,6 +16,7 @@ finish-args:
 - --talk-name=org.freedesktop.secrets
 - --system-talk-name=org.freedesktop.UDisks2
 - --device=all
+- --device=dri
 - --allow=devel
 modules:
 - shared-modules/SDL2/SDL2-with-libdecor.json
