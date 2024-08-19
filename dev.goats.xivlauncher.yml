@@ -8,83 +8,83 @@ build-options:
 command: xivlauncher
 copy-icon: true
 finish-args:
-- --share=ipc
-- --socket=x11 # We can switch to Wayland once some launcher issues are resolved.
-- --share=network
-- --filesystem=home
-- --socket=pulseaudio
-- --talk-name=org.freedesktop.secrets
-- --system-talk-name=org.freedesktop.UDisks2
-- --device=all
-- --allow=devel
+  - --share=ipc
+  - --socket=x11 # We can switch to Wayland once some launcher issues are resolved.
+  - --share=network
+  - --filesystem=home
+  - --socket=pulseaudio
+  - --talk-name=org.freedesktop.secrets
+  - --system-talk-name=org.freedesktop.UDisks2
+  - --device=all
+  - --allow=devel
 modules:
-- shared-modules/SDL2/SDL2-with-libdecor.json
-- buildsystem: meson
-  config-opts:
-  - -Dwith-examples=false
-  - -Dwith-util=false
-  - -Dwith-sd-bus-provider=no-daemon
-  name: gamemode
-  sources:
-  - commit: 5180d89e66830d87f69687b95fb86f622552b94b
-    tag: 1.8.1
-    type: git
-    url: https://github.com/FeralInteractive/gamemode.git
-    x-checker-data:
-      type: git
-- buildsystem: meson
-  cleanup:
-  - /bin
-  - /include
-  - /lib/pkgconfig
-  - /share/gir-1.0
-  - /share/man
-  config-opts:
-  - -Dmanpage=false
-  - -Dvapi=false
-  - -Dgtk_doc=false
-  name: libsecret
-  sources:
-  - sha256: 8583e10179456ae2c83075d95455f156dc08db6278b32bf4bd61819335a30e3a
-    type: archive
-    url: https://download.gnome.org/sources/libsecret/0.19/libsecret-0.19.1.tar.xz
-- config-opts:
-  - --with-ca-bundle=/etc/ssl/certs/ca-certificates.crt
-  name: aria2
-  sources:
-  - sha256: 60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b
-    type: archive
-    url: https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0.tar.xz
-- build-commands:
-  - install -d "${FLATPAK_DEST}/opt/XIVLauncher/"
-  - dotnet publish -r linux-x64 --sc --source ./nuget-sources -o "${FLATPAK_DEST}/opt/XIVLauncher/"
-    src/XIVLauncher.Core/XIVLauncher.Core.csproj --configuration Release -p:ExtraDefineConstants=FLATPAK
-  - install -D -m644 misc/linux_distrib/XIVLauncher.desktop "${FLATPAK_DEST}/share/applications/dev.goats.xivlauncher.desktop"
-  - install -D -m644 misc/linux_distrib/512.png "${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/xivlauncher.png"
-  - install -D -m644 dev.goats.xivlauncher.appdata.xml "${FLATPAK_DEST}/share/metainfo/dev.goats.xivlauncher.appdata.xml"
-  - ln -s "${FLATPAK_DEST}/opt/XIVLauncher/XIVLauncher.Core" "${FLATPAK_DEST}/bin/xivlauncher"
-  buildsystem: simple
-  name: xivlauncher
-  sources:
-  - commit: 08cc5386de57ccf2b6d74c10952cbef614879995
-    tag: 1.1.0
-    type: git
-    url: https://github.com/goatcorp/XIVLauncher.Core.git
-  - dest: nuget-sources
-    dest-filename: microsoft.aspnetcore.app.runtime.linux-x64.6.0.1.nupkg
-    sha512: 865af2ac328070403202eb5f0c436abbf8edb3fd484dec92b4c0cd6d42d36c8c7e396bc9bfd13cd0b6f877baf72b3fbfb0b425a794711dbab4b0297b20143ce5
-    type: file
-    url: https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.linux-x64/6.0.1/microsoft.aspnetcore.app.runtime.linux-x64.6.0.1.nupkg
-  - dest: nuget-sources
-    sha512: 01d0e6c885a357270dabb65878deed2c147841297d8688a543b7605f4704d2507c70f86f825a59a975ff7789a4b74677262947fc97a7a25f23556292266b50ef
-    type: file
-    url: https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.linux-x64/6.0.1/microsoft.netcore.app.runtime.linux-x64.6.0.1.nupkg
-  - path: dev.goats.xivlauncher.appdata.xml
-    type: file
-  - nuget-dependencies.json
+  - shared-modules/SDL2/SDL2-with-libdecor.json
+  - buildsystem: meson
+    config-opts:
+      - -Dwith-examples=false
+      - -Dwith-util=false
+      - -Dwith-sd-bus-provider=no-daemon
+    name: gamemode
+    sources:
+      - commit: 715a1389b789e661a3996a90fbd2c0bf6c9cf6d2
+        tag: 1.8.2
+        type: git
+        url: https://github.com/FeralInteractive/gamemode.git
+        x-checker-data:
+          type: git
+  - buildsystem: meson
+    cleanup:
+      - /bin
+      - /include
+      - /lib/pkgconfig
+      - /share/gir-1.0
+      - /share/man
+    config-opts:
+      - -Dmanpage=false
+      - -Dvapi=false
+      - -Dgtk_doc=false
+    name: libsecret
+    sources:
+      - sha256: 8583e10179456ae2c83075d95455f156dc08db6278b32bf4bd61819335a30e3a
+        type: archive
+        url: https://download.gnome.org/sources/libsecret/0.19/libsecret-0.19.1.tar.xz
+  - config-opts:
+      - --with-ca-bundle=/etc/ssl/certs/ca-certificates.crt
+    name: aria2
+    sources:
+      - sha256: 60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b
+        type: archive
+        url: https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0.tar.xz
+  - build-commands:
+      - install -d "${FLATPAK_DEST}/opt/XIVLauncher/"
+      - dotnet publish -r linux-x64 --sc --source ./nuget-sources -o "${FLATPAK_DEST}/opt/XIVLauncher/"
+        src/XIVLauncher.Core/XIVLauncher.Core.csproj --configuration Release -p:ExtraDefineConstants=FLATPAK
+      - install -D -m644 misc/linux_distrib/XIVLauncher.desktop "${FLATPAK_DEST}/share/applications/dev.goats.xivlauncher.desktop"
+      - install -D -m644 misc/linux_distrib/512.png "${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/xivlauncher.png"
+      - install -D -m644 dev.goats.xivlauncher.appdata.xml "${FLATPAK_DEST}/share/metainfo/dev.goats.xivlauncher.appdata.xml"
+      - ln -s "${FLATPAK_DEST}/opt/XIVLauncher/XIVLauncher.Core" "${FLATPAK_DEST}/bin/xivlauncher"
+    buildsystem: simple
+    name: xivlauncher
+    sources:
+      - commit: 08cc5386de57ccf2b6d74c10952cbef614879995
+        tag: 1.1.0
+        type: git
+        url: https://github.com/goatcorp/XIVLauncher.Core.git
+      - dest: nuget-sources
+        dest-filename: microsoft.aspnetcore.app.runtime.linux-x64.6.0.1.nupkg
+        sha512: 865af2ac328070403202eb5f0c436abbf8edb3fd484dec92b4c0cd6d42d36c8c7e396bc9bfd13cd0b6f877baf72b3fbfb0b425a794711dbab4b0297b20143ce5
+        type: file
+        url: https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.linux-x64/6.0.1/microsoft.aspnetcore.app.runtime.linux-x64.6.0.1.nupkg
+      - dest: nuget-sources
+        sha512: 01d0e6c885a357270dabb65878deed2c147841297d8688a543b7605f4704d2507c70f86f825a59a975ff7789a4b74677262947fc97a7a25f23556292266b50ef
+        type: file
+        url: https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.linux-x64/6.0.1/microsoft.netcore.app.runtime.linux-x64.6.0.1.nupkg
+      - path: dev.goats.xivlauncher.appdata.xml
+        type: file
+      - nuget-dependencies.json
 rename-icon: xivlauncher
 runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
-- org.freedesktop.Sdk.Extension.dotnet8
+  - org.freedesktop.Sdk.Extension.dotnet8
