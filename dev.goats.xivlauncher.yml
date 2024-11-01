@@ -26,8 +26,8 @@ modules:
   - -Dwith-sd-bus-provider=no-daemon
   name: gamemode
   sources:
-  - commit: 5180d89e66830d87f69687b95fb86f622552b94b
-    tag: 1.8.1
+  - commit: c54d6d4243b0dd0afcb49f2c9836d432da171a2b
+    tag: 1.8.2
     type: git
     url: https://github.com/FeralInteractive/gamemode.git
     x-checker-data:
@@ -66,8 +66,8 @@ modules:
   buildsystem: simple
   name: xivlauncher
   sources:
-  - commit: 08cc5386de57ccf2b6d74c10952cbef614879995
-    tag: 1.1.0
+  - commit: 12e550b7d3197b2b4122bde275717755c96aafac
+    tag: 1.1.1
     type: git
     url: https://github.com/goatcorp/XIVLauncher.Core.git
   - dest: nuget-sources

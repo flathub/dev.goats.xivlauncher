@@ -10,7 +10,7 @@
       XIVLauncher is a custom launcher for FINAL FANTASY XIV that offers painless patching, a customized WINE version for perfect compatibility with FFXIV, a multitude of useful plugins and seamless Steam Deck integration. Install, log in, patch, and get started!
     </p>
     <p>
-      Please note that on Steam Deck, you will have to adjust the command in your Non-Steam app shortcut to make the game work correctly in gaming mode. See our Steam Deck FAQ, linked below under help, for more information.
+      Please note that this flatpak may not work properly on Steam Deck. See our Steam Deck FAQ, linked below under help, for more information and an alternative option.
     </p>
     <p>
       FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd. FINAL FANTASY XIV &#169; 2010-2022 SQUARE ENIX CO., LTD. All Rights Reserved. We are not affiliated with SQUARE ENIX CO., LTD. in any way.
@@ -25,7 +25,11 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release date="2024-06-28" version="1.1.0" />
+    <release date="2024-11-01" version="1.1.1">
+      <description>
+        <p>Release notes are available at https://github.com/goatcorp/XIVLauncher.Core/releases/tag/1.1.1</p>
+      </description>
+    </release>
   </releases>
   <update_contact>goatsdev@protonmail.com</update_contact>
   <launchable type="desktop-id">dev.goats.xivlauncher.desktop</launchable>
