@@ -3,8 +3,8 @@ command: start.sh
 copy-icon: true
 finish-args:
   - --share=ipc
-  - --socket=x11
   - --socket=wayland # needed for xlm, SDL should still ignore this.
+  - --socket=fallback-x11
   - --share=network
   - --filesystem=home
   - --socket=pulseaudio
