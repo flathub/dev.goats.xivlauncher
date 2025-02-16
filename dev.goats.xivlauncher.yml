@@ -31,8 +31,8 @@ modules:
       env:
         CARGO_HOME: /run/build/xivlauncher/cargo
     sources:
-      - commit: c09345087ab0fb95088bdf7b45c9a9694041237e
-        tag: v0.3.6
+      - commit: e119dde645db7486d65e25140df72bb4a0de6060
+        tag: v0.3.7
         type: git
         url: https://github.com/Blooym/XLM.git
       - type: file
