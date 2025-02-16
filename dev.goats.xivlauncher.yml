@@ -15,9 +15,12 @@ finish-args:
   - --device=all
   - --allow=devel
   - --filesystem=home
+  # Required for Steamdeck SD cards and users who install
+  # the game to an external drive.
   - --filesystem=/media
   - --filesystem=/run/media
   - --filesystem=/mnt
+  # Discord RPC
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
   - --filesystem=xdg-run/app/com.discordapp.DiscordCanary:create
 build-options:
