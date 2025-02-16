@@ -44,7 +44,6 @@ modules:
       - path: dev.goats.xivlauncher.appdata.xml
         type: file
       - generated-sources.json
-  - shared-modules/SDL2/SDL2-with-libdecor.json
   # gamemode
   - name: gamemode
     buildsystem: meson
