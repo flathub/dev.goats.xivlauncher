@@ -18,7 +18,6 @@ modules:
   # xivlauncher
   - name: xivlauncher
     build-commands:
-      - install -d "${FLATPAK_DEST}/opt/XIVLauncher/"
       - install -D -m644 XIVLauncher.desktop "${FLATPAK_DEST}/share/applications/dev.goats.xivlauncher.desktop"
       - install -D -m644 512.png "${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/xivlauncher.png"
       - install -D -m644 dev.goats.xivlauncher.appdata.xml "${FLATPAK_DEST}/share/metainfo/dev.goats.xivlauncher.appdata.xml"
