@@ -30,6 +30,46 @@ build-options:
   env:
     DOTNET_CLI_TELEMETRY_OPTOUT: "true"
 modules:
+  - name: xivlauncher
+    build-commands:
+      - install -d "${FLATPAK_DEST}/opt/XIVLauncher/"
+      - dotnet publish -r linux-x64 --sc --source ./nuget-sources -o "${FLATPAK_DEST}/opt/XIVLauncher/"
+        src/XIVLauncher.Core/XIVLauncher.Core.csproj --configuration Release -p:ExtraDefineConstants=FLATPAK
+
+      - install -D -m644 dev.goats.xivlauncher.metainfo.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
+      - install -D -m644 dev.goats.xivlauncher.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+      - install -D -m644 icon-64.png "${FLATPAK_DEST}/share/icons/hicolor/64x64/apps/${FLATPAK_ID}.png"
+      - install -D -m644 icon-128.png "${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png"
+      - install -D -m644 icon-256.png "${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png"
+      - install -D -m644 icon-512.png "${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
+
+      - ln -s "${FLATPAK_DEST}/opt/XIVLauncher/XIVLauncher.Core" "${FLATPAK_DEST}/bin/xivlauncher"
+      - install -D -m755 start-xivlauncher "${FLATPAK_DEST}/bin/start-xivlauncher"
+    buildsystem: simple
+    sources:
+      - nuget-dependencies.json
+      - type: git
+        url: https://github.com/goatcorp/XIVLauncher.Core.git
+        tag: 1.1.1
+        commit: 12e550b7d3197b2b4122bde275717755c96aafac
+        x-checker-data:
+          type: git
+          is-main-source: true
+          tag-pattern: "^v([\\d.]+)$"
+      - type: file
+        path: start-xivlauncher
+      - type: file
+        path: dev.goats.xivlauncher.metainfo.xml
+      - type: file
+        path: distrib/dev.goats.xivlauncher.desktop
+      - type: file
+        path: distrib/icon-64.png
+      - type: file
+        path: distrib/icon-128.png
+      - type: file
+        path: distrib/icon-256.png
+      - type: file
+        path: distrib/icon-512.png
   - name: gamemode
     buildsystem: meson
     config-opts:
@@ -66,44 +106,8 @@ modules:
       - sha256: 60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b
         type: archive
         url: https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0.tar.xz
-  - name: xivlauncher
-    build-commands:
-      - install -d "${FLATPAK_DEST}/opt/XIVLauncher/"
-      - dotnet publish -r linux-x64 --sc --source ./nuget-sources -o "${FLATPAK_DEST}/opt/XIVLauncher/"
-        src/XIVLauncher.Core/XIVLauncher.Core.csproj --configuration Release -p:ExtraDefineConstants=FLATPAK
-
-      - install -D -m644 dev.goats.xivlauncher.metainfo.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
-      - install -D -m644 dev.goats.xivlauncher.desktop "${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
-      - install -D -m644 icon-64.png "${FLATPAK_DEST}/share/icons/hicolor/64x64/apps/${FLATPAK_ID}.png"
-      - install -D -m644 icon-128.png "${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png"
-      - install -D -m644 icon-256.png "${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png"
-      - install -D -m644 icon-512.png "${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
-
-      - ln -s "${FLATPAK_DEST}/opt/XIVLauncher/XIVLauncher.Core" "${FLATPAK_DEST}/bin/xivlauncher"
-      - install -D -m755 start-xivlauncher "${FLATPAK_DEST}/bin/start-xivlauncher"
-    buildsystem: simple
-    sources:
-      - nuget-dependencies.json
-      - type: git
-        url: https://github.com/goatcorp/XIVLauncher.Core.git
-        tag: 1.1.1
-        commit: 12e550b7d3197b2b4122bde275717755c96aafac
         x-checker-data:
-          type: git
-          is-main-source: true
-          tag-pattern: "^v([\\d.]+)$"
-
-      - type: file
-        path: start-xivlauncher
-      - type: file
-        path: dev.goats.xivlauncher.metainfo.xml
-      - type: file
-        path: distrib/dev.goats.xivlauncher.desktop
-      - type: file
-        path: distrib/icon-64.png
-      - type: file
-        path: distrib/icon-128.png
-      - type: file
-        path: distrib/icon-256.png
-      - type: file
-        path: distrib/icon-512.png
+          type: anitya
+          project-id: 109
+          stable-only: true
+          url-template: https://github.com/aria2/aria2/releases/download/release-$version/aria2-$version.tar.xz
