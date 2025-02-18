@@ -1,7 +1,7 @@
 app-id: dev.goats.xivlauncher
 command: start-xivlauncher
 runtime: org.freedesktop.Platform
-runtime-version: "24.08"
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.dotnet8
@@ -28,7 +28,7 @@ build-options:
   append-path: /usr/lib/sdk/dotnet8/bin
   append-pkg-config-path: :/usr/lib/sdk/dotnet8/lib/pkgconfig
   env:
-    DOTNET_CLI_TELEMETRY_OPTOUT: "true"
+    DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
 modules:
   - name: xivlauncher
     build-commands:
@@ -51,12 +51,12 @@ modules:
       - nuget-dependencies.json
       - type: git
         url: https://github.com/goatcorp/XIVLauncher.Core.git
-        tag: 1.1.1
-        commit: 12e550b7d3197b2b4122bde275717755c96aafac
+        tag: v1.0.3
+        commit: c2e02fd2b48876b4a00ba278c240f8a6361d3455
         x-checker-data:
           type: git
           is-main-source: true
-          tag-pattern: "^v([\\d.]+)$"
+          tag-pattern: ^v([\d.]+)$
       - type: file
         path: start-xivlauncher
       - type: file
