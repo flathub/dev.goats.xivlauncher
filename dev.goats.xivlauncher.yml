@@ -43,7 +43,7 @@ modules:
       - install -D -m644 icon-256.png "${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png"
       - install -D -m644 icon-512.png "${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
 
-      - install -d "${FLATPAK-DEST}/bin/"
+      - install -d "${FLATPAK_DEST}/bin/"
       - ln -s "${FLATPAK_DEST}/opt/XIVLauncher/XIVLauncher.Core" "${FLATPAK_DEST}/bin/xivlauncher"
       - install -D -m755 start-xivlauncher "${FLATPAK_DEST}/bin/start-xivlauncher"
     buildsystem: simple
