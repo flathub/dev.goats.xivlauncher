@@ -56,7 +56,7 @@ modules:
         x-checker-data:
           type: git
           is-main-source: true
-          tag-pattern: "^v([\\d.]+)$"
+          tag-pattern: ^([\d.]+)$
       - type: file
         path: start-xivlauncher
       - type: file
