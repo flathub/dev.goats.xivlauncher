@@ -49,10 +49,10 @@
     <control>gamepad</control>
   </supports>
   <releases>
-    <release date="2024-11-01" version="1.1.1">
+    <release date="2025-03-31" version="1.1.2">
       <description>
         <p>Release notes are available at
-          https://github.com/goatcorp/XIVLauncher.Core/releases/tag/1.1.1</p>
+          https://github.com/goatcorp/XIVLauncher.Core/releases/tag/1.1.2</p>
       </description>
     </release>
   </releases>
