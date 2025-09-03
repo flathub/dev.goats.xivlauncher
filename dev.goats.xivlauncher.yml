@@ -49,6 +49,7 @@ modules:
     buildsystem: simple
     sources:
       - nuget-dependencies.json
+      - shared-modules/libsecret/libsecret.json
       - type: git
         url: https://github.com/goatcorp/XIVLauncher.Core.git
         tag: 1.2.1
@@ -84,22 +85,6 @@ modules:
         url: https://github.com/FeralInteractive/gamemode.git
         x-checker-data:
           type: git
-  - name: libsecret
-    buildsystem: meson
-    cleanup:
-      - /bin
-      - /include
-      - /lib/pkgconfig
-      - /share/gir-1.0
-      - /share/man
-    config-opts:
-      - -Dmanpage=false
-      - -Dvapi=false
-      - -Dgtk_doc=false
-    sources:
-      - sha256: 8583e10179456ae2c83075d95455f156dc08db6278b32bf4bd61819335a30e3a
-        type: archive
-        url: https://download.gnome.org/sources/libsecret/0.19/libsecret-0.19.1.tar.xz
   - name: aria2
     config-opts:
       - --with-ca-bundle=/etc/ssl/certs/ca-certificates.crt
