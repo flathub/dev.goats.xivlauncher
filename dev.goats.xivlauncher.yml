@@ -49,7 +49,6 @@ modules:
     buildsystem: simple
     sources:
       - nuget-dependencies.json
-      - shared-modules/libsecret/libsecret.json
       - type: git
         url: https://github.com/goatcorp/XIVLauncher.Core.git
         tag: 1.2.1
@@ -72,6 +71,7 @@ modules:
         path: distrib/icon-256.png
       - type: file
         path: distrib/icon-512.png
+  - shared-modules/libsecret/libsecret.json
   - name: gamemode
     buildsystem: meson
     config-opts:
