@@ -71,7 +71,6 @@ modules:
         path: distrib/icon-256.png
       - type: file
         path: distrib/icon-512.png
-  - shared-modules/libsecret/libsecret.json
   - name: gamemode
     buildsystem: meson
     config-opts:
